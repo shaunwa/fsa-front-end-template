@@ -1,4 +1,3 @@
-/* You can add global styles to this file, and also import other style files */
 body {
 	margin: 0;
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -6,20 +5,20 @@ body {
 	  sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-}
-
-code {
+  }
+  
+  code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
 	  monospace;
-}
+  }
 
-nav {
-	border-bottom: 2px solid #eee;
-	padding: 16px;
-}
-
-button {
-	background-color: green;
+a {
+	color: inherit;
+	text-decoration: none;
+  }
+  
+  button {
+	background-color: black;
 	border: none;
 	border-radius: 8px;
 	color: white;
@@ -31,14 +30,9 @@ button {
 	font-weight: bold;
 	outline: none;
 	padding: 16px;
-}
-
-a {
-	color: inherit;
-	text-decoration: none;
-}
-
-input, select {
+  }
+  
+  input, select {
 	border: 2px solid #ddd;
 	border-radius: 8px;
 	box-sizing: border-box;
@@ -50,71 +44,109 @@ input, select {
 	font-weight: bold;
 	outline: none;
 	padding: 16px;
-}
-
-.app-heading {
+  }
+  
+  nav {
+	border-bottom: 2px solid #eee;
+	padding: 16px;
+  }
+  
+  .app-heading {
 	display: inline-block;
 	margin: 8px;
-}
-
-.logged-in-as {
+  }
+  
+  .logged-in-as {
 	float: right;
 	margin-right: 16px;
-}
-
-.sign-out-button {
+  }
+  
+  .sign-out-button {
 	float: right;
-}
-
-.centered-container {
+  }
+  
+  .error-message {
+	background-color: #ffcccb;
+	border-radius: 4px;
+	padding: 16px;
+  }
+  
+  .section-heading {
+	border-bottom: 1px solid #aaa;
+	padding-bottom: 16px;
+	margin: 16px;
+  }
+  
+  .centered-container {
 	max-width: 750px;
 	margin: auto;
-}
-
-.section-heading {
-	border-bottom: 1px solid black;
-	padding-bottom: 16px;
-}
-
-.list-item {
-	align-items: center;
-	border-bottom: 1px solid #ddd;
+  }
+  
+  .photos-list {
 	display: flex;
-	padding: 16px;
-}
-
-.list-item-data {
+	flex-grow: 1;
+	flex-wrap: wrap;
+	max-width: 100vw;
+	min-height: 232px;
+  }
+  
+  .photos-list-item-wrap {
+	background-color: black;
+	border-radius: 8px;
+	display: flex;
+	align-items: center;
 	flex: 1;
-}
-
-.new-message-form {
+	margin: 16px;
+	height: 200px;
+	width: 200px;
+  }
+  
+  .photos-list-item {
+	max-height: 200px;
+	max-width: 200px;
+	height: auto;
+	width: auto;
+  }
+  
+  .new-photo-button {
+	align-items: center;
+	background-color: #ddd;
+	border-radius: 8px;
+	display: flex;
+	flex: 1;
+	height: 200px;
+	justify-content: center;
+	margin: 16px;
+	width: 200px;
+  }
+  
+  .plus-sign {
+	color: #333;
+	font-size: 64px;
+  }
+  
+  .share-with-form {
 	padding: 16px 0;
 	display: flex;
-}
+  }
   
-.new-message-form input {
+  .share-with-form input {
 	flex: 8;
-}
+  }
   
-.new-message-form button {
+  .share-with-form button {
 	flex: 1;
-}
-
-.error-message {
-	background-color: #ffccbb;
-	padding: 8px;
-	border-radius: 4px;
-}
+  }
   
-.full-width {
+  .full-width {
 	display: block;
 	width: 100%;
-}
+  }
   
-.space-before {
+  .space-before {
 	margin-top: 16px;
-}
+  }
   
-.space-after {
+  .space-after {
 	margin-bottom: 16px;
-}
+  }
