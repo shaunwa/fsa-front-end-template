@@ -11,12 +11,16 @@ import { BackButtonComponent } from './back-button/back-button.component';
 import { SmallXComponent } from './small-x/small-x.component';
 
 import { environment } from '../environments/environment';
+import { SignInPageComponent } from './sign-in-page/sign-in-page.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BackButtonComponent,
-    SmallXComponent
+    SmallXComponent,
+    SignInPageComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
