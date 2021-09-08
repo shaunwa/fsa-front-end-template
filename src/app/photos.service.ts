@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Observable } from 'rxjs';
 import { httpOptionsWithAuthToken } from './httpOptionsWithAuthToken';
+import { Photo } from './types';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,14 @@ export class PhotosService {
     private http: HttpClient,
 		private auth: AngularFireAuth,
   ) { }
+
+  loadMyPhotos(): Observable<Photo[]> {
+    return this.requestWithCredentials('get', '/api/my-photos', {}, []);
+  }
+
+  loadSharedPhotos(): Observable<Photo[]> {
+    return this.requestWithCredentials('get', '/api/shared', {}, []);
+  }
 
   private requestWithCredentials<T>(method: string, url: string, payload: any, defaultReturnValue: T): Observable<T> {
     return new Observable<T>(observer => {

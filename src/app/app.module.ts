@@ -13,6 +13,10 @@ import { SmallXComponent } from './small-x/small-x.component';
 import { environment } from '../environments/environment';
 import { SignInPageComponent } from './sign-in-page/sign-in-page.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { BrowsePhotosPageComponent } from './browse-photos-page/browse-photos-page.component';
+import { MyPhotosListComponent } from './my-photos-list/my-photos-list.component';
+import { PhotosListComponent } from './photos-list/photos-list.component';
+import { NewPhotoButtonComponent } from './new-photo-button/new-photo-button.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,11 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     BackButtonComponent,
     SmallXComponent,
     SignInPageComponent,
-    NavBarComponent
+    NavBarComponent,
+    BrowsePhotosPageComponent,
+    MyPhotosListComponent,
+    PhotosListComponent,
+    NewPhotoButtonComponent
   ],
   imports: [
     BrowserModule,
