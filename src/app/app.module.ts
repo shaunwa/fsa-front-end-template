@@ -17,6 +17,7 @@ import { BrowsePhotosPageComponent } from './browse-photos-page/browse-photos-pa
 import { MyPhotosListComponent } from './my-photos-list/my-photos-list.component';
 import { PhotosListComponent } from './photos-list/photos-list.component';
 import { NewPhotoButtonComponent } from './new-photo-button/new-photo-button.component';
+import { UploadPhotoPageComponent } from './upload-photo-page/upload-photo-page.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { NewPhotoButtonComponent } from './new-photo-button/new-photo-button.com
     BrowsePhotosPageComponent,
     MyPhotosListComponent,
     PhotosListComponent,
-    NewPhotoButtonComponent
+    NewPhotoButtonComponent,
+    UploadPhotoPageComponent
   ],
   imports: [
     BrowserModule,

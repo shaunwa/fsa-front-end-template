@@ -24,6 +24,25 @@ export class PhotosService {
     return this.requestWithCredentials('get', '/api/shared', {}, []);
   }
 
+  uploadPhoto(formData: FormData): Observable<void> {
+    return this.uploadFileWithCredentials('/api/upload', formData);
+  }
+
+  private uploadFileWithCredentials(url: string, formData: FormData): Observable<void> {
+    return new Observable<void>(observer => {
+        this.auth.user.subscribe(user => {
+            user && user.getIdToken().then((token: any) => {
+                if (user && token) {
+                    this.http.post(url, formData, httpOptionsWithAuthToken(token, true))
+                        .subscribe(() => observer.next());
+                } else {
+                    observer.next();
+                }
+            })
+        })
+      });
+  }
+
   private requestWithCredentials<T>(method: string, url: string, payload: any, defaultReturnValue: T): Observable<T> {
     return new Observable<T>(observer => {
         this.auth.user.subscribe(user => {
