@@ -28,6 +28,14 @@ export class PhotosService {
     return this.uploadFileWithCredentials('/api/upload', formData);
   }
 
+  loadPhoto(photoId: string): Observable<Photo | null> {
+    return this.requestWithCredentials('get', `/api/photos/${photoId}`, {}, null);
+  }
+
+  sharePhotoWithEmail(photoId: string, email: string): Observable<Photo | null> {
+    return this.requestWithCredentials('post', `/api/photos/${photoId}/shared-with`, { email }, null);
+  }
+
   private uploadFileWithCredentials(url: string, formData: FormData): Observable<void> {
     return new Observable<void>(observer => {
         this.auth.user.subscribe(user => {

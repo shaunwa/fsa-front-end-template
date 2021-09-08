@@ -18,6 +18,8 @@ import { MyPhotosListComponent } from './my-photos-list/my-photos-list.component
 import { PhotosListComponent } from './photos-list/photos-list.component';
 import { NewPhotoButtonComponent } from './new-photo-button/new-photo-button.component';
 import { UploadPhotoPageComponent } from './upload-photo-page/upload-photo-page.component';
+import { PhotoDetailPageComponent } from './photo-detail-page/photo-detail-page.component';
+import { SharedEmailsListComponent } from './shared-emails-list/shared-emails-list.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { UploadPhotoPageComponent } from './upload-photo-page/upload-photo-page.
     MyPhotosListComponent,
     PhotosListComponent,
     NewPhotoButtonComponent,
-    UploadPhotoPageComponent
+    UploadPhotoPageComponent,
+    PhotoDetailPageComponent,
+    SharedEmailsListComponent
   ],
   imports: [
     BrowserModule,

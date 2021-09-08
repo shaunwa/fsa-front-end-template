@@ -1,5 +1,6 @@
 export interface Photo {
     _id: string,
     url: string,
-    name: string,
+    title: string,
+    sharedWithEmails?: string[],
 }

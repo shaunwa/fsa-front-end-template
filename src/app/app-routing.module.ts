@@ -4,6 +4,7 @@ import { SignInPageComponent } from './sign-in-page/sign-in-page.component';
 import { BrowsePhotosPageComponent } from './browse-photos-page/browse-photos-page.component';
 import { RouteGuard } from './route.guard';
 import { UploadPhotoPageComponent } from './upload-photo-page/upload-photo-page.component';
+import { PhotoDetailPageComponent } from './photo-detail-page/photo-detail-page.component';
 
 const routes: Routes = [{
   path: 'sign-in',
@@ -15,6 +16,10 @@ const routes: Routes = [{
 }, {
   path: 'upload-photo',
   component: UploadPhotoPageComponent,
+  canActivate: [RouteGuard],
+}, {
+  path: 'photos/:id',
+  component: PhotoDetailPageComponent,
   canActivate: [RouteGuard],
 }];
 
