@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { StocksService } from '../stocks.service';
-import { PortfolioData, StockHistory } from '../types';
+import { PortfolioData } from '../types';
 
 @Component({
   selector: 'app-dashboard-page',
@@ -14,7 +14,7 @@ export class DashboardPageComponent implements OnInit {
   prices: string[] = [];
   currentPrice: string = '';
 
-  numberOfSharesValue: string = '';
+  numberOfSharesValue: number = 0;
 
   constructor(
     private stocksService: StocksService,
@@ -37,11 +37,19 @@ export class DashboardPageComponent implements OnInit {
   }
 
   buyShares(): void {
-
+    this.stocksService.buyStock(this.numberOfSharesValue)
+      .subscribe(updatedData => {
+        this.portfolioData = updatedData;
+        this.numberOfSharesValue = 0;
+      });
   }
 
   sellShares(): void {
-
+    this.stocksService.sellStock(this.numberOfSharesValue)
+      .subscribe(updatedData => {
+        this.portfolioData = updatedData;
+        this.numberOfSharesValue = 0;
+      });
   }
 
 }

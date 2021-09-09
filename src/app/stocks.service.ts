@@ -21,4 +21,12 @@ export class StocksService {
     return this.http.get<object>('/api/stock-history')
       .pipe(map((data: any) => data['Time Series (30min)']));
   }
+
+  buyStock(numberOfShares: number): Observable<PortfolioData> {
+    return this.http.post<PortfolioData>('/api/stocks/buy', { numberOfShares });
+  }
+
+  sellStock(numberOfShares: number): Observable<PortfolioData> {
+    return this.http.post<PortfolioData>('/api/stocks/sell', { numberOfShares });
+  }
 }
