@@ -2,9 +2,12 @@
 <ng-container *ngIf="!isLoading">
     <h1 class="section-heading">Stock Trading App</h1>
     <div class="centered-container">
-        <h3>The stock chart will go here…</h3>
+        <app-stock-chart
+            [xValues]="times"
+            [yValues]="prices"
+        ></app-stock-chart>
         <div class="financial-info-section">
-            <div class="info-item">Current TSLA Share Price: ??</div>
+            <div class="info-item">Current TSLA Share Price: {{ currentPrice }}</div>
             <div class="info-item">You currently own {{ portfolioData!.numberOfSharesOwned }} shares</div>
             <div class="info-item">Cash Balance: ${{ portfolioData!.cashValue }}</div>
             <div class="info-item">Portfolio Value: ${{ portfolioData!.sharesValue }}</div>

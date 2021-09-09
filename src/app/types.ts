@@ -3,3 +3,7 @@ export interface PortfolioData {
     sharesValue: number,
     numberOfSharesOwned: number,
 }
+
+export interface StockHistory {
+
+}
