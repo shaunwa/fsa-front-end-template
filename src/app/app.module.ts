@@ -14,6 +14,7 @@ import { SmallXComponent } from './small-x/small-x.component';
 import { environment } from '../environments/environment';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { SignInPageComponent } from './sign-in-page/sign-in-page.component';
+import { ConversationsListPageComponent } from './conversations-list-page/conversations-list-page.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { SignInPageComponent } from './sign-in-page/sign-in-page.component';
     BackButtonComponent,
     SmallXComponent,
     NavBarComponent,
-    SignInPageComponent
+    SignInPageComponent,
+    ConversationsListPageComponent
   ],
   imports: [
     BrowserModule,

@@ -1,10 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ConversationsListPageComponent } from './conversations-list-page/conversations-list-page.component';
+import { RouteGuard } from './route.guard';
 import { SignInPageComponent } from './sign-in-page/sign-in-page.component';
 
 const routes: Routes = [{
   path: 'sign-in',
   component: SignInPageComponent,
+}, {
+  path: '',
+  component: ConversationsListPageComponent,
+  canActivate: [RouteGuard],
 }];
 
 @NgModule({
