@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ConversationsListPageComponent } from './conversations-list-page/conversations-list-page.component';
+import { NewConversationPageComponent } from './new-conversation-page/new-conversation-page.component';
 import { RouteGuard } from './route.guard';
 import { SignInPageComponent } from './sign-in-page/sign-in-page.component';
 
@@ -11,6 +12,10 @@ const routes: Routes = [{
   path: '',
   component: ConversationsListPageComponent,
   canActivate: [RouteGuard],
+}, {
+  path: 'new-conversation',
+  component: NewConversationPageComponent,
+  canActivate: [RouteGuard]
 }];
 
 @NgModule({

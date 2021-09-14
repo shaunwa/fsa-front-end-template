@@ -15,6 +15,7 @@ import { environment } from '../environments/environment';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { SignInPageComponent } from './sign-in-page/sign-in-page.component';
 import { ConversationsListPageComponent } from './conversations-list-page/conversations-list-page.component';
+import { NewConversationPageComponent } from './new-conversation-page/new-conversation-page.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ConversationsListPageComponent } from './conversations-list-page/conver
     SmallXComponent,
     NavBarComponent,
     SignInPageComponent,
-    ConversationsListPageComponent
+    ConversationsListPageComponent,
+    NewConversationPageComponent
   ],
   imports: [
     BrowserModule,
