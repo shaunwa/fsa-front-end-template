@@ -22,7 +22,20 @@ export class ConversationsService {
 					if (user && token) {
 							this.http.get<Conversation[]>(`/api/users/${user.uid}/conversations`, httpOptionsWithAuthToken(token))
 								.subscribe(data => observer.next(data));
-          }
+					}
+				})
+			})
+		});
+  }
+
+  createConversation(name: string, memberIds: string[]): Observable<string> {
+		return new Observable<string>(observer => {
+			this.auth.user.subscribe(user => {
+				user && user.getIdToken().then(token => {
+					if (user && token) {
+							this.http.post<string>(`/api/conversations`, { name, memberIds }, httpOptionsWithAuthToken(token))
+								.subscribe(newConversationId => observer.next(newConversationId));
+					}
 				})
 			})
 		});
