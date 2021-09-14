@@ -16,6 +16,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { SignInPageComponent } from './sign-in-page/sign-in-page.component';
 import { ConversationsListPageComponent } from './conversations-list-page/conversations-list-page.component';
 import { NewConversationPageComponent } from './new-conversation-page/new-conversation-page.component';
+import { ConversationPageComponent } from './conversation-page/conversation-page.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { NewConversationPageComponent } from './new-conversation-page/new-conver
     NavBarComponent,
     SignInPageComponent,
     ConversationsListPageComponent,
-    NewConversationPageComponent
+    NewConversationPageComponent,
+    ConversationPageComponent
   ],
   imports: [
     BrowserModule,
