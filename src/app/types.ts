@@ -8,3 +8,8 @@ export interface User {
     id: string,
     name: string,
 }
+
+export interface Message {
+    postedBy: User,
+    text: string,
+}

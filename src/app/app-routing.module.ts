@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ConversationPageComponent } from './conversation-page/conversation-page.component';
 import { ConversationsListPageComponent } from './conversations-list-page/conversations-list-page.component';
 import { NewConversationPageComponent } from './new-conversation-page/new-conversation-page.component';
 import { RouteGuard } from './route.guard';
@@ -15,7 +16,11 @@ const routes: Routes = [{
 }, {
   path: 'new-conversation',
   component: NewConversationPageComponent,
-  canActivate: [RouteGuard]
+  canActivate: [RouteGuard],
+}, {
+  path: 'conversations/:id',
+  component: ConversationPageComponent,
+  canActivate: [RouteGuard],
 }];
 
 @NgModule({

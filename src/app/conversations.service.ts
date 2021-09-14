@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { Observable } from 'rxjs';
-import { Conversation } from './types';
+import { Observable, Observer } from 'rxjs';
+import io, { Socket } from 'socket.io-client';
+import { Conversation, Message } from './types';
 import { httpOptionsWithAuthToken } from './httpOptionsWithAuthToken';
 
 @Injectable({
@@ -35,6 +36,25 @@ export class ConversationsService {
 					if (user && token) {
 							this.http.post<string>(`/api/conversations`, { name, memberIds }, httpOptionsWithAuthToken(token))
 								.subscribe(newConversationId => observer.next(newConversationId));
+					}
+				})
+			})
+		});
+  }
+
+  getConversationSocketConnection(conversationId: string): Observable<Socket> {
+		return new Observable<Socket>(observer => {
+			this.auth.user.subscribe(user => {
+				user && user.getIdToken().then(token => {
+					if (user && token) {
+						const socket = io(`http://127.0.0.1:8080`, {
+							query: {
+								conversationId,
+								token,
+							}
+						});
+						
+						observer.next(socket);
 					}
 				})
 			})
